@@ -16,6 +16,7 @@ The speech sound samples are from the Harvard Speech Corpus from Demonte (2019)[
 
 ** Demo version
 
+- https://georgiosdiapoulis.github.io/jspsych-demo/index.html
 
 
 ** Code
@@ -69,7 +70,7 @@ To make flashing intervals of show/non-show you modify the =jspsych/css/jspsych.
 To modify the submission form and button see: https://formspree.io/formbutton/docs
 
 
-#+BEGIN_EXPORT html
+#+BEGIN_EXPORT javascript
  formbutton("create", {
      action: "https://formspree.io/moqkrjpn",
      buttonImg: '<img src="https://img.icons8.com/cotton/64/000000/submit-document.png"/>',  // <-- new button icon
