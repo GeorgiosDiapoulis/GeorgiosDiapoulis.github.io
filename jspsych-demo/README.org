@@ -69,8 +69,7 @@ To make flashing intervals of show/non-show you modify the =jspsych/css/jspsych.
 
 To modify the submission form and button see: https://formspree.io/formbutton/docs
 
-
-#+BEGIN_EXPORT javascript
+#+BEGIN_EXAMPLE
 formbutton("create", {
     action: "https://formspree.io/moqkrjpn",
     buttonImg: '<img src="https://img.icons8.com/cotton/64/000000/submit-document.png"/>',  // <-- new button icon
@@ -84,7 +83,7 @@ formbutton("create", {
 	type: "submit"
     }]
 })
-#+END_EXPORT
+#+END_EXAMPLE
 
 
 * References
