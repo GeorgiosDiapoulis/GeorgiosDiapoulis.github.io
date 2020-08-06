@@ -71,19 +71,19 @@ To modify the submission form and button see: https://formspree.io/formbutton/do
 
 
 #+BEGIN_EXPORT javascript
- formbutton("create", {
-     action: "https://formspree.io/moqkrjpn",
-     buttonImg: '<img src="https://img.icons8.com/cotton/64/000000/submit-document.png"/>',  // <-- new button icon
-     onSubmit: myOnSubmit,
-     fields: [{
-	 type: "email",
-	 name: "Thanks for participating!!<p>Please press the submit button to finish the experiment.</p>",
-	 required: false
-     },
-     {
-	 type: "submit"
-     }]
- })
+formbutton("create", {
+    action: "https://formspree.io/moqkrjpn",
+    buttonImg: '<img src="https://img.icons8.com/cotton/64/000000/submit-document.png"/>',  // <-- new button icon
+    onSubmit: myOnSubmit,
+    fields: [{
+	type: "email",
+	name: "Thanks for participating!!<p>Please press the submit button to finish the experiment.</p>",
+	required: false
+    },
+    {
+	type: "submit"
+    }]
+})
 #+END_EXPORT
 
 
