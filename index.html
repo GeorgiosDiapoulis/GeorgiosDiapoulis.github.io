@@ -5,7 +5,7 @@
     <title>Online listening test test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  
+
   <link href="style_acoutect.css" rel="stylesheet" type="text/css" />
   <script>
     function PlaySound(sample) {
@@ -13,7 +13,7 @@
 	snd.play();
     }
   </script>
-  
+
   <body>
 
     <div class="header">
@@ -22,14 +22,14 @@
       </div>
       <div class="logo_s">
 	<a href="https://www.sw.siemens.com/"><img src="siemens_logo_ingenuity.png"></a>
-      </div>      
+      </div>
     </div>
 
     <div class="menu"> </div>
-    
+
     <div class="content">
-      
-      
+
+
       <h1>Listening test demo</h1>
       <p>
 	The purpose of this online listening test is to demonstrate the principle of an online listening test.
@@ -63,17 +63,17 @@
 	Adjust the sound level of your device such that this sounds natural (not too soft or too loud) and leave it there for the whole test. (If you don't hear anything, try another browser or device!)
       </p>
       <p><button class="button" onclick="PlaySound('white.wav')"></button>Sound check</p>
-      
+      <!--  -->
       <br>
       <p> Thanks a lot for your participation! </p>
       <br>
-      
-      
+
+
       <form action="https://formspree.io/meqrvywn" method="POST">
-	
+
 	<label><input type="text" name="_gotcha" style="display:none"></label>
 	<!-- <label>Leave this field empty: <input name="_gotcha"></label> -->
-	
+
 	<fieldset>
 	  <legend>A few preliminary questions</legend>
 	  What is your age range?
@@ -117,12 +117,12 @@
 	  <br>
 	  <p>Thank you for your input! The test starts right below.</p>
 	</fieldset>
-	
-	
 
-	
-	
-	
+
+
+
+
+
 	<fieldset><legend class="question"></legend>
 	  Listen to these two sounds:
 	  <p><button class="button" onclick="PlaySound('white.wav')"></button>Sound A</p>
@@ -147,9 +147,9 @@
 	    <input required="true" type="radio" name="sound2" id="sound2_B" value="B"> <label for="sound2_B">B</label>
 	  </p>
 	</fieldset>
-	
 
-	
+
+
 	<fieldset><legend class="question"></legend>
 	  Listen to this sound:
 	  <p><button class="button" onclick="PlaySound('white.wav')"></button>Sound</p>
@@ -161,22 +161,22 @@
 	    <tr> <td>Pleasant</td> <td> <input type="range" min="0" max="10" value="5" class="slider" name="sound3_annoyance"></td> <td>Annoying</td> </tr>
 	  </table>
 	</fieldset>
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	<fieldset><legend>The end</legend>
-	  
+
 	  Choosing an appropriate answer to the questions was:
 	  <table> <tr> <td>Easy</td> <td> <input type="range" min="0" max="10" value="5" class="slider" name="easiness"></td> <td>Difficult</td> </tr></table>
-	  
+
 	  <label>
 	    Please write any additional comments here:
 	    <p><textarea name="message" rows="10" cols="40"></textarea></p>
 	  </label>
-	  
+
 	  <label>
 	    <!-- If you would like to receive the results of this test please write your email address here: -->
 	    If you would be interested in the outcome of this test please write your email address here:
@@ -188,7 +188,7 @@
 	</fieldset>
       </form>
     </div>
-    
+
     <footer>
       The source code of this page is free software and is distributed under the terms of the GNU General Public License, version 3 or any later version. A copy of the license can be found here: <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a>.<br><br>
       Copyright 2020 <a href="https://jacquescuenca.org" style="text-decoration:none; color:inherit">Jacques Cuenca</a>

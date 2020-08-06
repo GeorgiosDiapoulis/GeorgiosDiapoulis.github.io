@@ -1,0 +1,90 @@
+* Serial recall online listening test based =jsPsych=
+
+This is a serial recall task with numbers.  The web interface is based on https://github.com/jspsych/jsPsych.
+
+This is a demo version.  For server-side implementation use the =index.html=.  For local implementation use =index-local.html=.
+
+The results are send and stored to https://formspree.io/.
+
+The speech sound samples are from the Harvard Speech Corpus from Demonte (2019)[fn:speech].
+
+
+
+[fn:speech] https://salford.figshare.com/collections/HARVARD_speech_corpus_-_audio_recording_2019/4437578
+
+
+
+** Demo version
+
+
+
+** Code
+
+The combination of auditory stimuli and flashing numbers was achieved by modifying the =jspsych-audio-keyboard-response= plugin.  The idea was to have a flashing =prompt=.
+
+You can find the modified plugin in =jspsych/plugins/jspsych-audio-keyboard-response-flashing.js=.
+
+The code below modifies the =prompt= and shows the numbers one-by-one.
+
+#+BEGIN_SRC javascript
+if (trial.prompt !== null) {
+    console.log("trial.prompt: ", trial.prompt);
+    var arr = Array.from(trial.prompt);
+
+    // Showing 1-by-1 numbers
+    arr.delayedForEach(function(num) {
+	console.log(num);
+	display_element.innerHTML = '<div class="jspsych-blink" style="font-size:40px;">' + String(num) + '</div>';
+    }, 1000, null, function() {
+	console.log("done!");
+    });
+
+}
+#+END_SRC
+
+
+To make flashing intervals of show/non-show you modify the =jspsych/css/jspsych.css= file as follows.
+
+
+#+BEGIN_SRC css
+/* https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3 */
+.jspsych-blink {
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
+    /* This works somehow properly  */
+    animation: blinker 1s step-start infinite;
+}
+
+/* https://css-tricks.com/almanac/properties/a/animation/ */
+@keyframes blinker {
+    30% {
+        opacity: 0;
+    }
+}
+#+END_SRC
+
+
+
+*** Formspree
+
+To modify the submission form and button see: https://formspree.io/formbutton/docs
+
+
+#+BEGIN_EXPORT html
+ formbutton("create", {
+     action: "https://formspree.io/moqkrjpn",
+     buttonImg: '<img src="https://img.icons8.com/cotton/64/000000/submit-document.png"/>',  // <-- new button icon
+     onSubmit: myOnSubmit,
+     fields: [{
+	 type: "email",
+	 name: "Thanks for participating!!<p>Please press the submit button to finish the experiment.</p>",
+	 required: false
+     },
+     {
+	 type: "submit"
+     }]
+ })
+#+END_EXPORT
+
+
+* References
+Demonte, Philippa (2019): /HARVARD speech corpus - audio recording 2019/. University of Salford. Collection. https://doi.org/10.17866/rd.salford.c.4437578.v1
