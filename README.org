@@ -1,2 +1,2 @@
 * This is my personal webpage
-- Go to [[georgiosdiapoulis.github.io]]
+- Go to [[https://georgiosdiapoulis.github.io][georgiosdiapoulis.github.io]]
